@@ -1,14 +1,15 @@
 try:
-	fhand = open('mailbox.txt')
+	file1=open('mailbox.txt')
 except:
-	print('File cannot be opened:', fname)
+	print('File cannot be opened')
 	exit()
 
-lines=fhand.readlines()
-a=open('output.txt','w')
+lines=file1.readlines()
+
+file2=open('output.txt','w')
 for line in lines:
 	if line.startswith("Message-ID:"):
-		ab=line[13:40]
-		print(ab)
-		a.write(ab)
-fhand.close()
+		word=line[13:40]
+		print(word)
+		file2.write(word)
+file1.close()
