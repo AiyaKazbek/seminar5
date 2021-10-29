@@ -1,5 +1,6 @@
+filename=input("File atyn engiz:")
 try:
-	file1=open('mailbox.txt')
+	file1=open(filename)
 except:
 	print('File cannot be opened')
 	exit()
@@ -10,6 +11,6 @@ file2=open('output.txt','w')
 for line in lines:
 	if line.startswith("Message-ID:"):
 		word=line[13:40]
-		print(word)
 		file2.write(word)
+		file2.write('\n')
 file1.close()
